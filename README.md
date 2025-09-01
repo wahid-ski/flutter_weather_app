@@ -17,7 +17,7 @@ It shows current weather, hourly forecast, and additional info with smooth Lotti
 |------------|---------|----------|
 | ![Interface](assets/screenshots/weather.png) | ![Search](assets/screenshots/Search.png) | ![Showcase](assets/screenshots/1756759954914.gif) |
 
-*Tip: Capture these using an emulator*
+*Tip: Captured these using an emulator*
 
 ## 🔹 Getting Started
 
