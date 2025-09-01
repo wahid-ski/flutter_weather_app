@@ -13,7 +13,7 @@ It shows current weather, hourly forecast, and additional info with smooth Lotti
 - Modern, clean UI design
 
 ## 🔹 Screenshots
-| Morning 🌅 | Rain 🌧 | Night 🌙 |
+| Weather Interface | Search | Showcase |
 |------------|---------|----------|
 | ![Morning](assets/screenshots/weather.png) | ![Rain](assets/screenshots/Search.png) | ![Night](assets/screenshots/1756759954914.gif) |
 
