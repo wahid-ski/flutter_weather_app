@@ -9,15 +9,15 @@ It shows current weather, hourly forecast, and additional info with smooth Lotti
 - Real-time weather updates (temperature, humidity, wind speed, pressure, etc.)
 - Hourly forecast for the next 6 hours
 - Lottie animations based on weather conditions (rain, sun, clouds, thunderstorm)
-- Dynamic background based on the time of day
+- Dynamic background changes every hour
 - Modern, clean UI design
 
 ## 🔹 Screenshots
-| Morning 🌅 | Rain 🌧 | Night 🌙 |
+| Weather Interface | Search | Showcase |
 |------------|---------|----------|
-| ![Morning](assets/screenshots/weather.png) | ![Rain](assets/screenshots/Search.png) | ![Night](assets/screenshots/1756759954914.gif) |
+| ![Interface](assets/screenshots/weather.png) | ![Search](assets/screenshots/Search.png) | ![Showcase](assets/screenshots/1756759954914.gif) |
 
-*Tip: Capture these using an emulator or physical device.*
+*Tip: Capture these using an emulator*
 
 ## 🔹 Getting Started
 
