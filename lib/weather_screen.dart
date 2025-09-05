@@ -28,34 +28,39 @@ class _WeatherScreenState extends State<WeatherScreen> {
   List<Map<String, dynamic>> _citySuggestions = [];
   bool _isLoadingSuggestions = false;
 
-  Future<void> fetchCitySuggestions(String input) async {
-    if (input.isEmpty) {
-      setState(() => _citySuggestions = []);
-      return;
-    }
+ Future<void> fetchCitySuggestions(String input) async {
+  if (input.isEmpty) {
+    setState(() => _citySuggestions = []);
+    return;
+  }
 
-    setState(() => _isLoadingSuggestions = true);
+  setState(() => _isLoadingSuggestions = true);
 
-    final encoded = Uri.encodeComponent(input);
-    final uri = Uri.parse(
-      'http://api.openweathermap.org/geo/1.0/direct?q=$encoded&limit=5&appid=$openWeatherAPIKey',
-    );
+  final encoded = Uri.encodeComponent(input);
+  final uri = Uri.parse(
+    'https://api.openweathermap.org/geo/1.0/direct?q=$encoded&limit=5&appid=$openWeatherAPIKey',
+  );
 
-    final res = await http.get(uri);
+  final res = await http.get(uri);
 
-    if (res.statusCode == 200) {
-      // Decode JSON response (list of city suggestions)
-      final data = jsonDecode(res.body) as List<dynamic>;
-      // Convert each item to Map<String, dynamic> and update the UI
+  if (res.statusCode == 200) {
+    final data = jsonDecode(res.body) as List<dynamic>;
+
+    // ✅ Check if the text field is still not empty
+    if (_controller.text.isNotEmpty) {
       setState(() {
         _citySuggestions = data.map((e) => e as Map<String, dynamic>).toList();
       });
     } else {
-      setState(() => _citySuggestions = []);
+      setState(() => _citySuggestions = []); // Clear if input was erased
     }
-
-    setState(() => _isLoadingSuggestions = false);
+  } else {
+    setState(() => _citySuggestions = []);
   }
+
+  setState(() => _isLoadingSuggestions = false);
+}
+
 
   Future<Map<String, dynamic>> getCurrentWeather(String cityName) async {
     try {
